@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Undergraduate research portfolio — structured light, multi-beam interference, MATLAB simulation." />
+  <title>劉恆睿 Liu HENG-RUEI Research Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#home"><strong>劉恆睿 LIU HENG-RUEI</strong><span>Research Portfolio</span></a>
+  <button class="menu" aria-label="開啟導覽" aria-expanded="false">Menu</button>
+  <nav aria-label="主要導覽">
+    <a href="#overview">Overview</a><a href="#journey">Research</a><a href="#matlab">MATLAB</a><a href="#materials">Materials</a><a href="#about">About</a>
+  </nav>
+</header>
+
+<main>
+  <section id="home" class="hero wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">UNDERGRADUATE RESEARCH · OPTICS</p>
+      <h1 class="hero-title"><span>Exploring</span><span>structured light</span><span><em>through</em></span><span><em class="no-break">multi-beam interference.</em></span></h1>
+      <p class="lead">Complex light with self-similar and embedded quasiperiodic structures by multibeam interference.</p>
+      <p class="meta">LIU HENG-RUEI · Department of Physics · National Chung Cheng University</p>
+      <div class="actions"><a class="button primary" href="#journey">Explore Research</a><a class="button ghost" href="#materials">Research Materials</a></div>
+      <div class="hero-index"><span>01 — Experiment</span><span>02 — Simulation</span><span>03 — Analysis</span></div>
+    </div>
+    <figure class="hero-visual research-image">
+      <video autoplay muted loop playsinline poster="assets/images/hierarchical-fallback-v2.png" aria-label="四個連續尺度的理論干涉結構逐層放大動畫">
+        <source src="assets/video/hero-hierarchical-crossfade.mp4" type="video/mp4" />
+      </video>
+      <figcaption><span>MODEL VISUALIZATION · 1st → 4th-order</span><br>Hierarchical construction across successive spatial scales</figcaption>
+    </figure>
+  </section>
+
+  <section id="overview" class="section overview">
+    <div class="wrap">
+      <div class="section-heading"><p class="section-no">01 / OVERVIEW</p><h2>One project,<br>built layer by layer.</h2></div>
+      <div class="overview-grid">
+        <p class="intro">本研究以遞迴多光束干涉建立階層式結構光場：每增加一個 Q-fold 對稱階層，就加入一個新的結構調制尺度。模型與數學形式可拓展至第 N 階；實驗以光罩作為篩選特定位置的波源達成多光束干涉，並完成至第三階。</p>
+        <div class="fact-grid"><article><span>QUESTION</span><strong>How can spatial scale become an additional degree of freedom in crystalline and quasicrystalline structured light?</strong><p>在既有晶格與準晶格結構光場中，如何進一步將空間尺度引入為新的自由度，並探討不同階層尺度上的 Q-fold symmetry 如何形成多尺度結構？</p></article><article><span>METHOD</span><strong>Hierarchical source construction</strong><p>以 Q<sub>N</sub> 定義各 order 的 rotational arrangement、R<sub>N</sub> 定義 spatial scale，逐階建立 hierarchical source distribution，並以數值模型重建對應干涉光場。</p></article><article><span>VALIDATION</span><strong>Experiment × Simulation</strong><p>以光罩篩選特定位置的波源形成多光束干涉，並以 MATLAB reconstruction 重建對應光場，直接比較實驗與數值結果及其跨尺度結構特徵。</p></article></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey" class="section wrap">
+    <div class="section-heading split"><div><p class="section-no">02 / RESEARCH JOURNEY</p><h2>From symmetry<br>to a recursive model.</h2></div><p class="intro">這段研究從既有晶格／準晶格結構光場出發，進一步把空間尺度引入為新的自由度。透過階層式波源排列逐階加入不同結構尺度，再由近場空間分布、遠場結構與數值模型之間的關係，建立可拓展至第 N 階的 recursive interference framework。</p></div>
+    <div class="journey-list manuscript-journey compact-journey">
+      <article><div class="journey-no">01</div><div><p class="kicker">RESEARCH QUESTION</p><h3>How can spatial scale become an additional degree of freedom in crystalline and quasicrystalline structured light?</h3><p>在既有晶格與準晶格結構光場中，進一步將空間尺度引入為新的自由度。透過階層式波源排列逐階加入不同結構尺度，使原有 Q-fold 結構延伸為多尺度干涉結構。</p></div><div class="source-level-animation"><img src="assets/images/research-v2/source-hierarchy-splitting.gif" alt="Iterative hierarchical source distribution evolving from 1st-order to 2nd-order to 3rd-order"><div class="source-level-caption"><span>1st-order</span><i>→</i><span>2nd-order</span><i>→</i><span>3rd-order</span></div></div></article>
+      <article class="journey-model journey-model-stacked"><div class="journey-no">02</div><div class="journey-model-content"><p class="kicker">RECURSIVE MODEL</p><h3>Each added order introduces a new structural scale.</h3><p>每一階以 Q<sub>N</sub> 決定環形波源的 rotational arrangement，並以 R<sub>N</sub> 設定對應的 spatial scale；新的環形分布再以既有波源位置為中心逐階展開，形成 hierarchical source distribution。</p>
+<figure class="recursive-geometry"><img src="assets/images/research-v2/recursive-source-geometry.png" alt="Hierarchical source-position construction from the 1st-order to the 4th-order, showing RN and angular interval ΔθN"><figcaption>Hierarchical source-position construction · Δθ<sub>N</sub> = 2π/Q<sub>N</sub>, while R<sub>N</sub> sets the spatial scale of each order.</figcaption></figure>
+<div class="equation-card recursive-equations"><span>SOURCE-POSITION CONSTRUCTION</span><strong>θ<sub>N,S<sub>N</sub></sub> = 2π(S<sub>N</sub> − 1)/Q<sub>N</sub>, &nbsp; S<sub>N</sub> = 1, 2, …, Q<sub>N</sub></strong><strong>P<sub>S</sub>(x,y) = Σ<sub>N</sub> R<sub>N,S<sub>N</sub></sub> = R<sub>1,S₁</sub>(cosθ<sub>1,S₁</sub>, sinθ<sub>1,S₁</sub>) + ⋯ + R<sub>N,S<sub>N</sub></sub>(cosθ<sub>N,S<sub>N</sub></sub>, sinθ<sub>N,S<sub>N</sub></sub>)</strong></div>
+<p class="model-note">在此共同的 source geometry 上，可進一步以 Gaussian-beam propagation 或 plane-wave formulation 重建干涉光場，並將模型延伸為通用的 Nth-order formulation。</p></div></article>
+      <article><div class="journey-no">03</div><div><p class="kicker">TWO MULTISCALE REGIMES</p><h3>Same Q repeats. Different Q changes what appears across scale.</h3><div class="regime-grid regime-grid-visual">
+<div class="regime-card"><div class="regime-copy"><span>SAME Q</span><strong>Repeated symmetry</strong><p>相同 Q-number 配置在不同階層尺度，形成 self-similar structure。</p><small>Q₁ = Q₂ = Q₃ = 5</small></div><figure><img src="assets/images/research-v2/sameQ_source.png" alt="Same-Q hierarchical near-field source distribution"></figure></div>
+<div class="regime-card"><div class="regime-copy"><span>DIFFERENT Q</span><strong>Embedded symmetry</strong><p>不同 Q-number 分布於不同階層尺度，改變觀察尺度時呈現不同 rotational symmetry features。</p><small>Q₁ = 5 · Q₂ = 4 · Q₃ = 3</small></div><figure><img src="assets/images/research-v2/differentQ_source_Q543.png" alt="Different-Q hierarchical near-field source distribution"></figure></div>
+</div></div></article>
+      <article><div class="journey-no">04</div><div><p class="kicker">EXPERIMENT × SIMULATION</p><h3>From photomask source geometry to reconstructed fields.</h3><p>以光罩篩選特定位置的波源形成多光束干涉，並以 MATLAB reconstruction 重建對應光場。Same-Q 與 Different-Q 三階結構提供實驗與數值結果的直接比較。</p></div><div class="validation-animation"><img src="assets/images/research-v2/validation-source-experiment-simulation.gif" alt="Validation sequence from source distribution to experimental field and MATLAB simulation"></div></article>
+      <article><div class="journey-no">05</div><div><p class="kicker">RESEARCH BOUNDARY</p><h3>Experiment to 3rd-order · Model extends to Nth-order</h3><p>實驗完成至第三階，模型與數學形式可拓展至第 N 階。</p></div><div class="journey-schematic boundary-schematic" aria-label="Research boundary schematic"><span class="schematic-label">ORDER</span><div class="order-line"><b>1</b><i>—</i><b>2</b><i>—</i><b>3</b><i>—</i><b>4</b><i>⋯</i><b>N</b></div><small><em>Experiment → 3rd-order</em><em>Model → Nth-order</em></small></div></article>
+<aside class="physical-interpretation"><div class="physical-copy"><p class="kicker">PHYSICAL INTERPRETATION</p><h3>Why does the near-field arrangement reshape the far-field structure?</h3><p>各 order 的環形波源分布可由空間 convolution 逐階建立，而近場與遠場具有 Fourier-transform 對應。依 convolution theorem，近場分布的 convolution 對應至 Fourier domain 中各結構成分的 multiplication，因此逐階改變近場波源排列，會在遠場引入對應的結構尺度與 rotational symmetry features。</p><div class="physical-flow"><span>Near-field source distributions</span><b>→</b><span>Spatial convolution</span><b>→</b><span>Fourier transform</span><b>→</b><span>Far-field structural modulation</span></div></div><figure class="physical-figure"><img src="assets/images/research-v2/convolution-fourier-fig38.png" alt="Undergraduate Project Report Figure 38 illustrating near-field convolution and the corresponding multiplication of far-field structures after Fourier transform"><figcaption>Undergraduate Project Report · Fig. 38 · convolution / Fourier interpretation of the dual-order structure.</figcaption></figure></aside>
+    </div>
+  </section>
+
+  <section id="matlab" class="section dark">
+    <div class="wrap">
+      <div class="section-heading split"><div><p class="section-no">03 / MATLAB & SIMULATION</p><h2>From equations<br>to measurable patterns.</h2></div><p class="intro">MATLAB 將 Q-number、空間尺度 R<sub>N</sub> 與 hierarchical source geometry 轉成可直接和實驗比較的光場。透過 MATLAB reconstruction 與實驗結果的相互檢驗，為研究結果提供進一步的佐證。</p></div>
+
+      <div class="simulation-pipeline compact-pipeline">
+<article><span>01 · INPUT</span><strong>Q<sub>N</sub> & R<sub>N</sub></strong><p>Define rotational arrangement and spatial scale.</p></article><b>→</b>
+<article><span>02 · SOURCE GEOMETRY</span><strong>Hierarchical positions</strong><p>Build the recursive source distribution.</p></article><b>→</b>
+<article><span>03 · FIELD RECONSTRUCTION</span><strong>MATLAB</strong><p>Reconstruct the interference field from the source geometry.</p></article><b>→</b>
+<article><span>04 · COMPARE</span><strong>Experiment × Simulation</strong><p>Compare structural features across observation scales.</p></article>
+</div>
+
+      <div class="research-evidence">
+        <div class="evidence-heading"><p class="kicker">SELECTED RESEARCH EVIDENCE</p><h3>From source geometry to multiscale fields.</h3><p>從近場波源分布出發，對照實驗影像與 MATLAB reconstruction，呈現階層式波源排列如何形成遠場干涉結構，並進一步比較不同觀察尺度下的結構特徵。</p></div>
+
+        <article class="evidence-case">
+          <header class="case-head"><div><span>CASE 01 · SAME Q</span><h4>Self-similarity across scale</h4></div><p>Q<sub>1</sub> = Q<sub>2</sub> = Q<sub>3</sub> = 5</p></header>
+          <div class="source-result-layout">
+            <figure class="source-card"><img src="assets/images/research-v2/sameQ_source.png" alt="Same-Q three-order source distribution with Q1 equals Q2 equals Q3 equals 5"><figcaption><span>NEAR-FIELD SOURCE</span><strong>Hierarchical source distribution</strong><p>相同 Q-number 被配置在不同空間尺度，形成三階波源排列。</p></figcaption></figure>
+            <div class="scale-comparison">
+              <div class="scale-head"><span></span><b>Original</b><b>×6</b><b>×36</b></div>
+              <div class="result-row"><span>EXPERIMENT</span><img src="assets/images/research-v2/sameQ_experiment_original.png" alt="Same-Q experimental field at original scale"><img src="assets/images/research-v2/sameQ_experiment_6x.png" alt="Same-Q experimental field magnified six times"><img src="assets/images/research-v2/sameQ_experiment_36x.png" alt="Same-Q experimental field magnified thirty-six times"></div>
+              <div class="result-row"><span>SIMULATION</span><img src="assets/images/research-v2/sameQ_simulation_original.png" alt="Same-Q simulated field at original scale"><img src="assets/images/research-v2/sameQ_simulation_6x.png" alt="Same-Q simulated field magnified six times"><img src="assets/images/research-v2/sameQ_simulation_36x.png" alt="Same-Q simulated field magnified thirty-six times"></div>
+            </div>
+          </div>
+          <p class="case-insight"><span>INTERPRETATION</span>相同 Q-number 配置於不同空間尺度，使相同的 Q-fold symmetry 在階層結構中重複出現，形成跨尺度的 self-similar structure。</p>
+        </article>
+
+        <article class="evidence-case">
+          <header class="case-head"><div><span>CASE 02 · DIFFERENT Q</span><h4>Embedded symmetry changes with scale</h4></div><p>Q<sub>1</sub> = 5 · Q<sub>2</sub> = 4 · Q<sub>3</sub> = 3</p></header>
+          <div class="source-result-layout">
+            <figure class="source-card"><img src="assets/images/research-v2/differentQ_source_Q543.png" alt="Different-Q three-order source distribution with Q1 5, Q2 4, Q3 3"><figcaption><span>NEAR-FIELD SOURCE</span><strong>Mixed-symmetry source distribution</strong><p>不同 Q-number 被嵌入不同階層尺度，形成同一組三階波源配置。</p></figcaption></figure>
+            <div class="scale-comparison">
+              <div class="scale-head"><span></span><b>Original</b><b>×6</b><b>×36</b></div>
+              <div class="result-row"><span>EXPERIMENT</span><img src="assets/images/research-v2/differentQ_experiment_original.png" alt="Different-Q experimental field at original scale"><img src="assets/images/research-v2/differentQ_experiment_6x.png" alt="Different-Q experimental field magnified six times"><img src="assets/images/research-v2/differentQ_experiment_36x.png" alt="Different-Q experimental field magnified thirty-six times"></div>
+              <div class="result-row"><span>SIMULATION</span><img src="assets/images/research-v2/differentQ_simulation_original.png" alt="Different-Q simulated field at original scale"><img src="assets/images/research-v2/differentQ_simulation_6x.png" alt="Different-Q simulated field magnified six times"><img src="assets/images/research-v2/differentQ_simulation_36x.png" alt="Different-Q simulated field magnified thirty-six times"></div>
+            </div>
+          </div>
+          <p class="case-insight"><span>INTERPRETATION</span>不同 Q-number 被配置於不同階層尺度；隨觀察尺度改變，遠場結構呈現不同的 rotational symmetry features，形成 scale-dependent embedded symmetry。</p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="materials" class="section wrap">
+<div class="section-heading split"><div><p class="section-no">04 / RESEARCH MATERIALS</p><h2>For deeper reading.</h2></div><p class="intro">Three research records capture different stages of the work—from experimental development and presentation to the later formulation of the research framework.</p></div>
+<div class="cards material-cards">
+<article><p class="tag">EXPERIMENTAL DEVELOPMENT</p><h3>Undergraduate Project Report</h3><p>從 single-order Q-fold interference 出發，逐步發展至 dual- 與 triple-order hierarchical structures，完整記錄 photomask design、實驗結果、MATLAB reconstruction 與分析過程。</p><div class="material-meta"><span>75 pages</span><span>May 2025</span><span>Traditional Chinese</span></div><div class="card-foot"><span>Experimental development</span><span>Full project report</span></div><a class="material-link" href="assets/documents/undergraduate-project-report.pdf" target="_blank" rel="noopener">VIEW FULL REPORT <span aria-hidden="true">↗</span></a></article>
+<article><p class="tag">RESEARCH PRESENTATION</p><h3>Oral Defense Slides</h3><p>以簡報形式整理研究動機、structured light 背景、實驗架構、source / photomask design 與主要結果，提供專題研究內容的視覺化脈絡。</p><div class="material-meta"><span>56 pages</span><span>Research overview</span><span>Visual presentation</span></div><div class="card-foot"><span>Presentation record</span><span>Oral defense</span></div><a class="material-link" href="assets/documents/oral-defense-presentation.pdf" target="_blank" rel="noopener">VIEW PRESENTATION <span aria-hidden="true">↗</span></a></article>
+<article class="material-featured"><p class="tag">CONCEPTUAL DEVELOPMENT</p><h3>Later Manuscript Draft</h3><p>專題完成後，進一步將階層式干涉結構整理為 recursive Q-fold interference framework，並建立模型與數學形式可拓展至 Nth-order 的描述。</p><div class="material-meta"><span>Recursive framework</span><span>Nth-order formulation</span><span>Later-stage development</span></div><div class="card-foot"><span>Unpublished working draft</span><span>Conceptual development</span></div></article>
+</div>
+</section>
+<section id="about" class="section about"><div class="wrap about-grid"><div><p class="section-no">05 / ABOUT</p><h2>劉恆睿</h2><p class="meta">National Chung Cheng University<br>Department of Physics</p></div><div class="about-copy"><p class="intro">When I encounter an unfamiliar problem, I try to build a way to solve it.</p><p>面對尚未有現成解法的問題，我習慣先把問題拆解，再從實驗設計、數值模擬與實際製作中建立可以驗證的解法。從課程專題中的 coding、CNC 與實驗製作，到大學專題中建立 source geometry、MATLAB reconstruction 並與實驗結果相互檢驗，這種從問題出發、建立方法並持續修正的過程，是我最主要的研究方式。</p></div></div></section>
+</main>
+
+<footer class="wrap"><span>LIU HENG-RUEI · Research Portfolio</span><span>Department of Physics · National Chung Cheng University</span></footer>
+<script src="js/main.js"></script>
+</body></html>
